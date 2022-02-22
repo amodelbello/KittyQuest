@@ -1,9 +1,9 @@
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-  private const int GravityScale = 20;
+  private const int GravityScale = 2;
   [SerializeField] private float speed = 18.0f;
-  [SerializeField] private float jumpForce = 50.0f;
+  [SerializeField] private float jumpForce = 10.0f;
   private Rigidbody2D _body;
   private BoxCollider2D _box;
 
