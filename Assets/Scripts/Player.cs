@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
 
   private void Update() {
     var deltaX = Input.GetAxis("Horizontal") * speed;
+
     HandleMove(deltaX);
 
     var grounded = IsGrounded();
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour {
   private void HandleJump(bool grounded, float deltaX) {
     _body.gravityScale =
       grounded && Mathf.Approximately(deltaX, 0) ? 0 : GravityScale;
+
     if (grounded && Input.GetKeyDown(KeyCode.Space)) {
       _body.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
